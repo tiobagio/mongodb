@@ -17,6 +17,6 @@ template "/etc/mongod.conf" do
 end
 
 service "mongod" do
- action [:enable, :restart]
+ action [:enable, :start]
   ignore_failure true
 end
