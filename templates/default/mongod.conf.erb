@@ -1,0 +1,18 @@
+systemLog:
+   destination: file
+   path: "<%= node['mongodb']['logpath'] %>"
+   logAppend: true
+storage:
+   journal:
+      enabled: true
+processManagement:
+   fork: true
+net:
+   bindIp: 127.0.0.1
+   port: <%= node['mongodb']['port'] %>
+setParameter:
+   enableLocalhostAuthBypass: false
+
+storage:
+  dbPath: "/var/lib/mongodb"
+  indexBuildRetry: true
