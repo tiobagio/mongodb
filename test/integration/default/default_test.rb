@@ -12,13 +12,14 @@ unless os.windows?
   end
 end
 
+describe service('mongod') do
+  it { should be_installed }
+  it { should be_enabled }
+end
+
 #
 # not supported?:  describe port( node['default']['mongodb']['port'] ) do
 describe port( 27017 ) do
   it { should be_listening }
 end
 
-describe service('mongod') do
-  it { should be_installed }
-  it { should be_enabled }
-end
